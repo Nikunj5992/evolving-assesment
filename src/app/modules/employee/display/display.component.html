@@ -1,0 +1,20 @@
+<div *ngVar="(employees$ | async) as employees">
+  <table>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Email
+      </th>
+    </tr>
+    <tr *ngFor="let employee of employees">
+      <td>
+        {{employee.firstName + employee.lastName}}
+      </td>
+      <td>
+        {{employee.email}}
+      </td>
+    </tr>
+  </table>
+</div>

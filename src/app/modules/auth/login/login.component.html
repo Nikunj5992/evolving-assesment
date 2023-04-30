@@ -1,0 +1,9 @@
+<form [formGroup]="loginForm" (submit)="processLogin()">
+  Email*: <input type="email" formControlName="email" >
+  <span [class.color]="'w3-red'" *ngIf="loginForm.get('email')?.hasError('required')">Email is required</span>
+  <span [class.color]="'w3-red'" *ngIf="loginForm.get('email')?.hasError('email')">Email is not valid</span>
+  <br>
+  Password*: <input type="password" formControlName="password">
+  <span [class.color]="'red'" *ngIf="loginForm.get('password')?.hasError('required')">Password is required</span><br>
+  <button type="submit" [disabled]="loginInProcess">Submit</button>
+</form>
